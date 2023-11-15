@@ -159,6 +159,11 @@ class ExperimentBuilder(nn.Module):
         ########################################
             
         
+        for name, param in named_parameters:
+            if param.requires_grad and "weight" in name:  # Focus on weight gradients
+                all_grads.append(param.grad.abs().mean())
+                layers.append(name)
+
         plt = self.plot_func_def(all_grads, layers)
         
         return plt
