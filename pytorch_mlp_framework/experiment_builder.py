@@ -147,7 +147,7 @@ class ExperimentBuilder(nn.Module):
         Receives the parameters of the model being trained. Returns plot of gradient flow for the given model parameters.
        
         """
-        all_grads = []
+        all_grads = [] 
         layers = []
         
         """
@@ -161,7 +161,7 @@ class ExperimentBuilder(nn.Module):
         
         for name, param in named_parameters:
             if param.requires_grad and "weight" in name:  
-                all_grads.append(param.grad.abs().mean().cpu)
+                all_grads.append(param.grad.abs().mean().cpu())
                 layers.append(name)
 
         return self.plot_func_def(all_grads, layers)
