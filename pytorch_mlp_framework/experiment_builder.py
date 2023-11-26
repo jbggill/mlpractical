@@ -159,11 +159,15 @@ class ExperimentBuilder(nn.Module):
         ########################################
             
         
-        for name, param in named_parameters:
-            if param.requires_grad and "weight" in name:  
-                all_grads.append(param.grad.abs().mean().cpu())
-                layers.append(name)
-
+        for n, p in named_parameters:
+            if (p.requires_grad) and ("weight" in n):
+                layers.append(n)
+                # Move gradients to CPU memory before calculating mean
+                if p.grad is not None:
+                    all_grads.append(p.grad.abs().mean().cpu())
+                else:
+                    # Handle the case where some parameters might not have gradients
+                    all_grads.append(torch.tensor(0))
         return self.plot_func_def(all_grads, layers)
         
     
