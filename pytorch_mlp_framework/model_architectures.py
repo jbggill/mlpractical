@@ -343,8 +343,8 @@ class ConvolutionalProcessingBlockBN(nn.Module):
     """
     Convolutional Processing block with the introduction of batch normalisation
     """
-    def _init_(self, input_shape, num_filters, kernel_size, padding, bias, dilation):
-        super(ConvolutionalProcessingBlockBN, self)._init_()
+    def __init__(self, input_shape, num_filters, kernel_size, padding, bias, dilation):
+        super(ConvolutionalProcessingBlockBN, self).__init__()
 
         self.num_filters = num_filters
         self.kernel_size = kernel_size
@@ -395,7 +395,7 @@ class ConvolutionalProcessingBlockBN(nn.Module):
 
 
 class ConvolutionalDimensionalityReductionBlockBN(nn.Module):
-    def _init_(self, input_shape, num_filters, kernel_size, padding, bias, dilation, reduction_factor):
+    def __init__(self, input_shape, num_filters, kernel_size, padding, bias, dilation, reduction_factor):
         super(ConvolutionalDimensionalityReductionBlockBN, self).__init__()
 
         self.num_filters = num_filters
@@ -450,8 +450,8 @@ class ConvolutionalDimensionalityReductionBlockBN(nn.Module):
         return out
 
 class ConvolutionalProcessingBlockBNRC(nn.Module):
-    def _init_(self, input_shape, num_filters, kernel_size, padding, bias, dilation):
-        super(ConvolutionalProcessingBlockBNRC, self)._init_()
+    def __init__(self, input_shape, num_filters, kernel_size, padding, bias, dilation):
+        super(ConvolutionalProcessingBlockBNRC, self).__init__()
 
         self.num_filters = num_filters
         self.kernel_size = kernel_size
