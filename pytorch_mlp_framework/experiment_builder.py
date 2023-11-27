@@ -164,7 +164,7 @@ class ExperimentBuilder(nn.Module):
                 layers.append(n)
                 # Move gradients to CPU memory before calculating mean
                 if p.grad is not None:
-                    all_grads.append(p.grad.abs().mean().cpu().numpy())
+                    all_grads.append(p.grad.abs().mean().cpu().numpy)
                 else:
                     # Handle the case where some parameters might not have gradients
                     all_grads.append(torch.tensor(0))

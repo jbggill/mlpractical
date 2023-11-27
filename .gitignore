@@ -69,3 +69,24 @@ notebooks/.ipynb_checkpoints/
 
 #Google Cloud stuff
 /google-cloud-sdk
+
+#My studf
+#pytorch_mlp_framework/experiment_builder.py
+gradient_flow_plots_38
+VGG_08_experiment/.DS_Store
+VGG_08_experiment/result_outputs/summary.csv
+VGG_08_experiment/saved_models/train_model_0
+VGG_08_experiment/saved_models/train_model_latest
+notebooks/.DS_Store
+notebooks/Plot_Results.ipynb
+notebooks/.DS_Store
+notebooks/Plot_Results.ipynb
+data/.DS_Store
+data/cifar-100-python/file.txt~
+data/cifar-100-python/meta
+data/cifar-100-python/test
+data/cifar-100-python/train
+data/.DS_Store
+notebooks/.DS_Store
+notebooks/Plot_Results.ipynb
+data/.DS_Store
